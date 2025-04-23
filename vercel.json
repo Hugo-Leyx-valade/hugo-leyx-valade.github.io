@@ -1,7 +1,9 @@
 {
-    "public": true,
     "rewrites": [
-      { "source": "/(.*)", "destination": "/public/CV.html" }
+      {
+        "source": "/((?!.*\\..*).*)", 
+        "destination": "/public/CV.html"
+      }
     ]
   }
   
