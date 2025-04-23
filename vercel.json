@@ -1,5 +1,5 @@
 {
-    "public": 1,
+    "public": true,
     "rewrites": [
       { "source": "/(.*)", "destination": "/public/CV.html" }
     ]
