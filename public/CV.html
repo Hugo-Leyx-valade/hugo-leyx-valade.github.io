@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <title>Mon CV - [Ton Nom]</title>
+  <title>Mon CV - Hugo Leyx-valade</title>
   <style>
     * {
       margin: 0;
@@ -35,7 +35,7 @@
     }
     nav a {
       color: white;
-      padding: 14px 20px;
+      padding: 2% 4%;
       text-decoration: none;
       text-align: center;
       transition: background 0.3s;
@@ -60,13 +60,13 @@
     ul {
       list-style-type: disc;
       padding-left: 20px;
-      padding-bottom: 30px
+      padding-bottom: 30px;
     }
-    ol{
-        list-style-type: none;
-        font-size: 20px;
-        font-weight: bolder;
-        padding-bottom: 5px;
+    ol {
+      list-style-type: none;
+      font-size: 20px;
+      font-weight: bolder;
+      padding-bottom: 5px;
     }
     .skills {
       display: flex;
@@ -105,116 +105,164 @@
     }
 
     body {
-  height: 100vh;
-}
+      height: 100vh;
+    }
 
-a {
-    text-decoration: none;
-}
+    a {
+      text-decoration: none;
+    }
 
-#contact, #sup-links {
-    display: flex;
-    justify-content:center; 
-    align-items: center;
-    margin-top: 20px;
-    
-  }    
+    #contact, #sup-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
 
+    /* Style for the slider */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .glide__slide {
+      border: 1px solid rgb(255, 255, 255);
+      line-height: 100px;
+      margin: 0;
+      text-align: center;
+    }
 
-/* Style for the slider */
-.wrap {
-  max-width: 900px;
-  margin: 0 auto;
-}
-.glide__slide {
-  border: 1px solid rgb(255, 255, 255);
-  line-height: 100px;
-  margin: 0;
-  text-align: center;
-}
+    #projet1 .inline-flex {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
 
-#projet1 .inline-flex {
-  display:inline-flex; /* Utilisation de flexbox pour l'alignement */
-  flex-wrap:wrap; /* Permet d'enrouler les éléments si l'espace est trop petit */
-  justify-content: space-between;
-  margin-bottom: 5px; /* Ajuste l'espacement vertical entre les éléments */
-}
+    #projet1 .inline-flex + .inline-flex {
+      margin-top: 0;
+    }
 
-#projet1 .inline-flex + .inline-flex {
-  margin-top: 0; /* Suppression de l'espacement entre les éléments */
-}
+    #projet1 .inline-flex img {
+      margin-right: 5px;
+    }
 
-#projet1 .inline-flex img {
-  margin-right: 5px; /* Ajuste l'espace entre l'icône et le texte */
-}
+    #projet1 {
+      color: rgb(29, 29, 29);
+      height: auto;
+    }
 
-#projet1{
-  color: rgb(29, 29, 29); /* Couleur du texte pour le titre et la description */
-}
+    .project-container {
+      position: relative;
+      background-size: 200%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 50%;
+      padding: 2rem;
+      background-position: 0px 0px;
+    }
 
-.project-container {
-  position: relative;
-  background-size:200%; /* ou 'cover' ou des dimensions spécifiques */
-  background-position: center; /* ou 'left', 'right', 'center center', etc. */
-  background-repeat: no-repeat;
-  height: 300px; /* taille de ton conteneur */
-  padding: 2rem;
-  background-position: 0px 0px; /* Ajuste la position de l'image de fond */
-}
+    .project-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      filter: blur(5px);
+      z-index: -1;
+    }
 
-.project-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  filter: blur(5px);
-  z-index: -1; /* L'image floue reste derrière le contenu */
-}
+    .project-container:hover {
+      filter: blur(0);
+    }
 
-.project-container:hover {
-  filter: blur(0); /* Enlève le flou au survol */
-}
+    .project-title,
+    .project-description {
+      opacity: 0;
+      color: rgb(0, 0, 0);
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
 
-.project-title,
-.project-description {
-  opacity: 0;
-  color: rgb(0, 0, 0);
-  transition: opacity 0.3s ease;
-  z-index: 1; /* Le texte reste au-dessus de l'image */
-}
+    .project-container:hover .project-title,
+    .project-container:hover .project-description,
+    .project-container:hover .tech-stack-item,
+    .project-container:hover a {
+      opacity: 1;
+    }
 
-.project-container:hover .project-title,
-.project-container:hover .project-description,
-.project-container:hover .tech-stack-item,
-.project-container:hover a {
-  opacity: 1; /* Affiche le texte lors du survol */
-}
+    .project-container a {
+      opacity: 0;
+    }
 
-.project-container a{
-    opacity: 0; /* Affiche le lien lors du survol */
-}
+    .tech-stack-item {
+      opacity: 0;
+      display: inline-flex;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+      border-radius: 10px;
+      height: 30px;
+      color: white;
+      z-index: 1;
+    }
 
-.tech-stack-item {
-    opacity: 0;
-  display: inline-flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  border-radius: 10px;
-  height: 30px;
-  color: white;
-  z-index: 1;
-}
+    .tech-stack-item img {
+      filter: brightness(0) invert(1);
+    }
 
-.tech-stack-item img {
-  filter: brightness(0) invert(1); /* Ajuste l'image si nécessaire */
-}
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
 
+      .skills {
+        flex-direction: column;
+        align-items: center;
+      }
 
+      .skill {
+        margin-bottom: 10px;
+      }
 
+      .glide__slide {
+        height: auto;
+      }
+
+      .project-container {
+        height: auto;
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        padding: 3% 6%;
+      }
+
+      .project-container {
+        height: auto;
+        padding: 0.5rem;
+      }
+
+      .project-title {
+        font-size: 1.2rem;
+      }
+
+      .project-description {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -222,8 +270,8 @@ a {
     <h1>Hugo Leyx-valade</h1>
     <p>Développeur Fullstack | Étudiant à l'EFREI</p>
     <div id="contact">
-        <p><b>Email</b> : hugo.leyx-valade@efrei.net</p>
-        <p style="padding-left: 20px;"> <b>Tel</b> : +33 7 85 99 76 16</p>
+      <p><b>Email</b> : hugo.leyx-valade@efrei.net</p>
+      <p style="padding-left: 20px;"> <b>Tel</b> : +33 7 85 99 76 16</p>
     </div>
 
     <div id="sup-links">
@@ -235,7 +283,7 @@ a {
         <img src="./reste/GitHub_Lockup_Light.png" alt="GitHub" width="100" style="vertical-align: middle; margin-left: 10px;" />
       </a>
     </div>
-  </header> 
+  </header>
   <nav>
     <a href="#profil">Profil</a>
     <a href="#competences">Compétences</a>
@@ -267,7 +315,7 @@ a {
         <div class="skill">C</div>
         <div class="skill">Git</div>
         <div class="skill">Agile</div>
-        <div class="skill">Scrum</div>        
+        <div class="skill">Scrum</div>
       </div>
     </section>
     <section id="experiences">
@@ -311,15 +359,16 @@ a {
     </section>
     <section id="projets">
         <h2>Projets</h2>
-        <div class="wrap">            
-             <div class="glide multi">
+        <div class="wrap">
+            <div class="glide multi">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                  <li class="glide__slide" style="opacity: 1; background-color: #b97900; height: 300px; "> 
+                  
+                  <li class="glide__slide" style="opacity: 1; background-color: #b97900; height: 280px; ">
+                    <a href="./GreenEscape.html">
                     <section id="projet1" class="project-container" style="background-image: url('./reste/GreenEscape.png');">
                         <h3 class="project-title" style="font-weight: bolder; font-size: 30px;">Projet Green Escape</h3>
                         <p class="project-description" style=" font-size: 15px; margin-top: -65px; margin-bottom: -40px;">Création d'un jeu en ligne de résolution de labyrinthe</p>
-                      
                         <div class="tech-stack-item" style="margin-top: -190px;">
                           <img height="16" width="16" alt="Django" src="https://cdn.simpleicons.org/django/color">
                           Django
@@ -338,18 +387,20 @@ a {
                         </div>
                         <div class="tech-stack-item">
                           <img height="16" width="16" alt="JavaScript" src="https://cdn.simpleicons.org/javascript/color">
-                          <p >JS</p>
+                          <p>JS</p>
                         </div>
                         <a href="https://github.com/Hugo-Leyx-valade/Green-Escape" target="_blank">
-                            <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" width="100" style="vertical-align: middle; margin-left: 10px;" />
+                            <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" width="30%" style="vertical-align: middle; margin-left: 10px;" />
                           </a>
-                      </section>                         
+                      </section>
+                    </a>
                   </li>
-                  <li class="glide__slide" style="opacity: 1; background-color: #b97900; height: 300px; "> 
+                  <li class="glide__slide" style="opacity: 1; background-color: #b97900; height: 280px; ">
+                    <a href="./BDD.html">
                     <section id="projet1" class="project-container" style="background-image: url('./reste/projetBDDI1.png'); background-size: 100%;">
                         <h3 class="project-title" style="font-weight: bolder; font-size: 30px;">Ludo Hub</h3>
                         <p class="project-description" style=" font-size: 15px; margin-top: -65px; margin-bottom: -40px;">Web app de reservation de jeu au près des ludothèques</p>
-                      
+
                         <div class="tech-stack-item" style="margin-top: -190px;">
                           <img height="16" width="16" alt="Django" src="https://cdn.simpleicons.org/nodedotjs/color">
                           Node.js
@@ -363,21 +414,21 @@ a {
                           Vue.js
                         </div>
                         <a href="https://github.com/Hugo-Leyx-valade/projet-BDD-I1" target="_blank">
-                          <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" width="100" style="vertical-align: middle; margin-left: 10px;" />
+                          <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" width="30%" style="vertical-align: middle; margin-left: 10px;" />
                         </a>
-                      </section>                                            
+                      </section>
+                      </a>
                   </li>
                 </ul>
               </div>
             </div>
         </div>
+        
     </section>
-
   <footer>
     &copy; 2025 Hugo Leyx-valade. Tous droits réservés.
   </footer>
   <script>
-   
     const reveals = document.querySelectorAll('.reveal');
 
     window.addEventListener('scroll', () => {
@@ -392,20 +443,14 @@ a {
       });
     });
 
-
-
-
     var glideMulti = new Glide('.multi', {
-    type: 'slider',
-    autoplay: 5000,
-    focusAt: 'center',
-    perView: 2
+      type: 'slider',
+      autoplay: 5000,
+      focusAt: 'center',
+      perView: 2
     });
 
     glideMulti.mount();
-
   </script>
 </body>
 </html>
-
-
