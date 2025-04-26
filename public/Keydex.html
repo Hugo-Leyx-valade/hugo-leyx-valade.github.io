@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KEYDEX</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #f1f1f1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-item {
+      background-color: #ecf0f100;
+      border-width: 1px;
+      border-color: #f1f1f169;
+      border-style: solid;
+      padding: 10px 11px;
+      border-radius: 25px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .glide__slide img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .glide__slide img:hover {
+      transform: scale(1.02);
+    }
+
+    .glide__slide p {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .github-link {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .github-link img {
+      transition: transform 0.2s ease;
+    }
+
+    .github-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>KEYDEX</h1>
+
+    <section>
+      <h2>Objectifs du projet</h2>
+      <p>
+        L'objectif de ce projet était d'imaginer une solution innovante en ayant carte blanche sur le sujet.
+        La solution devait être idéalisée puis présentée.
+        Chaque groupe était suivi par un professeur qui devait valider chaque étape du projet comme:
+        </p>
+        <ul>
+            <li><b>Première idée</b> : observation d'une problématique</li>
+            <li><b>Etude de la cible</b> : early adopters, personas</li>
+            <li><b>Etude de la concurrence</b> : SWOT, benchmark, PESTEL, avantage concurentiel</li>
+            <li><b>Modélisation de l'idée</b> : maquette, état de l'art, sketchnote</li>
+            <li><b>Développement</b> : choix des technologies, développement</li>            
+        </ul>
+    </section>
+
+    <section>
+      <h2>Ce que le projet m’a apporté</h2>
+      <p>
+        Ce projet m'a d'en apprendre beaucoup sur la conceptualisation et le développement d'une innovation quelle qu'elle soit.
+        J'ai pu découvrir toutes les étapes de la création d'un projet, de l'idée à la réalisation.
+        J'ai également appris à travailler en équipe, à gérer le temps et à respecter les délais qui nous étais imposés.
+        <br>
+        <br>
+        <b style="color: plum;">Cette expérience à aussi été l'occasion d'aller jusqu'en finale du concours TechDay de l'Efrei et de la gagner avec mon groupe.</b>  
+        
+    </p>
+    </section>
+
+    <section>
+        <h2>Notre solution</h2>
+        <p>
+          Pour notre solution nous sommes partis d'un constat simple. Le concierge de l'école à un nombre exéssif de clefs à gérer.
+          Et evidement ce problème n'est pas propre à notre école. Nous avons donc décidé de créer une application web qui permettrait de gérer les clefs de manière simple et efficace.
+            <br>
+            Pour cela il suffirait de d'indexer chaque clef dans une base de donnée et de lui une attache composer un recepteur NFC et d'une lumière qui l'illuminerait.
+            <br>
+            Ainsi il suffirait de passer le telephone devant le trousseau de clef pendant que le telephone génere la fréquence de la bonne clef pour que celle-ci s'illumine.
+            <br>
+            <br>
+            Dans un premier temps cette solution permettrait de gérer un trousseau de clef plus facilement et de raccourcir le temps de recherche de la bonne clef.
+            <br>
+            Dans un second temps cette solution apporterait une sécurité supplémentaire en permettant de savoir qui a pris quelle clef et à quel moment, mais aussi en évitant les clefs <i>passe partout</i> ou les badges qui peuvent être copiés.
+        </p>
+      </section>
+
+    <section>
+      <h2>Galerie du projet</h2>
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="./reste/KEydex/kdobjectifs.png" alt="Capture 1" class="glide-img" />
+              <p><b>Les Objectifs de notre solution</b></p>
+            </li>
+            <li class="glide__slide">
+              <img src="./reste/KEydex/kdproblématique.png" alt="Capture 2" class="glide-img"/>
+              <p><b>Problématique d'un trouçeau de clefs sans notre solution</b></p>
+            </li>
+            <li class="glide__slide">
+              <img src="./reste/KEydex/kdearlyadopt.png" alt="Capture 3" class="glide-img"/>
+              <p><b>Early adopters identifiés</b></p>
+            </li>
+            <li class="glide__slide">
+                <img src="./reste/KEydex/kdconcu.png" alt="Capture 3" class="glide-img"/>
+                <p><b>concurrence identifiés</b></p>
+              </li>
+            <li class="glide__slide">
+                <img src="./reste/KEydex/kdpestel.png" alt="Capture 3" class="glide-img"/>
+                <p><b>Etude PESTEL de la solution</b></p>
+              </li>
+              <li class="glide__slide">
+                <img src="./reste/KEydex/kdswot.png" alt="Capture 3" class="glide-img"/>
+                <p><b>Etude SWOT de la solution</b></p>
+              </li>
+              <li class="glide__slide">
+                <img src="./reste/KEydex/kdidee.png" alt="Capture 3" class="glide-img"/>
+                <p><b>Modélisation simple de l'idée de la clef et de l'application qui l'accompagne</b></p>
+              </li>
+          </ul>
+        </div>
+        <!-- Contrôles de navigation -->
+        <div data-glide-el="controls" style="text-align: center; margin-top: 10px;">
+          <button data-glide-dir="<" style="background-color: rgb(224, 77, 253); border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-right: 2%;" >
+            <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" style="margin-top: -3%; width: 70%;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M85.333333 512l298.666667-249.6v499.2z" fill="#ffffff"></path><path d="M320 426.666667h576v170.666666H320z" fill="#ffffff"></path></g></svg>
+          </button>
+            <button data-glide-dir=">" style="background-color: rgb(224, 77, 253); border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-left: 2%;" >
+              <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000" style="margin-top: -3%; width: 70%;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M938.666667 512L640 761.6V262.4z" fill="#ffffff"></path><path d="M128 426.666667h576v170.666666H128z" fill="#ffffff"></path></g></svg>            
+            </button>
+            </div>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 1,
+      autoplay: 3500,
+      hoverpause: true,
+      bound: true, // empêche le carrousel de sortir de la portée
+      controls: {
+        prev: '[data-glide-dir="<"]',
+        next: '[data-glide-dir=">"]'
+      }
+    }).mount();
+
+    // Lightbox logic
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".modal .close");
+
+    // Ciblage de toutes les images de la galerie
+    document.querySelectorAll(".glide__slide img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    // Fermer la lightbox
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Fermer si on clique en dehors de l'image
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
