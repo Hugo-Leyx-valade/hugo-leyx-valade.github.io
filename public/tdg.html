@@ -175,45 +175,45 @@
             </button>
             </div>
     </section>
-  </div>
 
-    <h1>Recherche opérationnelle</h1>
+    <h1 style="margin-top: 15%;">Recherche opérationnelle</h1> <p style="color: rgb(255, 208, 0); text-align: center; margin-top: -2%;"> (En cours de développement)</p>
     <section>
       <h2>Objectifs du projet</h2>
       <p>
-        coder les deux algorithmes pour
+        Coder les deux algorithmes pour
         trouver un flot maximal par la méthode de Ford-Fulkerson et de l’algorithme pousser-réétiqueter. Et pour
         tout réseau de flot pondéré, coder l’algorithme permettant de
         trouver un flot de coût minimal pour une valeur de flot donnée en entrée    
     </p>
       <div class="github-link">
-        <a href="https://github.com/Hugo-Leyx-valade/projet_graph" target="_blank">
+        <a href="https://github.com/Hugo-Leyx-valade/operations-research-project" target="_blank">
           <img src="./reste/GitHub_Lockup_Light.png" alt="GitHub" width="130" />
         </a>
       </div>
     </section>
 
     <section>
-      <h2>Ce que le projet m’a apporté</h2>
-      <p>
-        Sachant que les problèmes d'ordonancement sont très présent dans le monde industriel, et ce projet m'a permis de me plonger dans un contexte réel d'utilisation de la théorie des graphes.
-        J'ai appris à dévelloper un solution applicable dans la vie réelle.
-        
-      </p>
+      <h2>Explication</h2>
+      <ul>
+        <li>Problème de flot maximal</li>
+        <ul>
+          <li><p>On part d'un graph orienté ou chaque arrête possède une capacitée. <br> Pour faire une analogie imaginoins un systeme de canalisation où tous les tuyaux n'ont pas la même dimmension donc pas la même capacité et flow possible. Le problème de flow maximal reviens alors à chercher le flow maximal en sortie</p></li>
+        </ul>
+      </ul>
     </section>
 
     <section>
       <h2>Galerie du projet</h2>
-      <div class="glide">
+      <div class="glide1">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <li class="glide__slide">
-              <img src="./reste/tdgprob.png" alt="Capture 1" class="glide-img" />
-              <p><b>Format du Problème à étudier </b>(la première colonne est le numéro de l'état, la deuxième le temps de réalisation de l'état et les colonnes suivantes représentes les prédécésseurs)</p>
+              <img src="./reste/roinit.png" alt="Capture 1" class="glide-img" />
+              <p><b>Matrice initial qui repésente le problème à résoudre</p>
             </li>
             <li class="glide__slide">
-              <img src="./reste/tdgcc.png" alt="Capture 2" class="glide-img"/>
-              <p><b>Affichage du chemin critique</b></p>
+              <img src="./reste/roff.png" alt="Capture 2" class="glide-img"/>
+              <p><b>Matrice résultante de la méthode de Ford-Fulkerson</b></p>
             </li>
           </ul>
         </div>
@@ -229,6 +229,7 @@
     </section>
   </div>
 
+
   <!-- Lightbox -->
   <div id="image-modal" class="modal">
     <span class="close">&times;</span>
@@ -238,6 +239,19 @@
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script>
     new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 1,
+      autoplay: 3500,
+      hoverpause: true,
+      bound: true, // empêche le carrousel de sortir de la portée
+      controls: {
+        prev: '[data-glide-dir="<"]',
+        next: '[data-glide-dir=">"]'
+      }
+    }).mount();
+
+    new Glide('.glide1', {
       type: 'carousel',
       startAt: 0,
       perView: 1,
