@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
   <title>Mon CV - Hugo Leyx-valade</title>
   <style>
     * {
@@ -14,6 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #111;
@@ -21,144 +21,116 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+
     header {
       background-color: #000;
       color: white;
-      padding: 40px 20px;
+      padding: 2rem 1rem;
       text-align: center;
     }
+
     nav {
       display: flex;
       justify-content: center;
       background-color: #1a1a1a;
       flex-wrap: wrap;
     }
+
     nav a {
       color: white;
-      padding: 2% 4%;
+      padding: 1rem;
       text-decoration: none;
-      text-align: center;
       transition: background 0.3s;
     }
+
     nav a:hover {
       background-color: #333;
     }
+
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 2rem;
     }
+
     section {
-      margin-bottom: 60px;
+      margin-bottom: 4rem;
     }
+
     h2 {
       color: #ccc;
       border-bottom: 2px solid #444;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
     }
+
     ul {
       list-style-type: disc;
-      padding-left: 20px;
-      padding-bottom: 30px;
+      padding-left: 1.25rem;
+      padding-bottom: 1.875rem;
     }
+
     ol {
       list-style-type: none;
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: bolder;
-      padding-bottom: 5px;
+      padding-bottom: 0.3125rem;
     }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 0.625rem;
     }
+
     .skill {
       background-color: #333;
-      padding: 10px 15px;
-      border-radius: 8px;
+      padding: 0.625rem 0.9375rem;
+      border-radius: 0.5rem;
       color: white;
     }
+
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 1.25rem;
       background-color: #000;
       color: white;
-    }
-    @media (max-width: 600px) {
-      nav a {
-        flex: 1 0 100%;
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateX(100px);
-      transition: all 0.6s ease-out;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .reveal-left {
-      transform: translateX(-100px);
-    }
-
-    body {
-      height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
     }
 
     #contact, #sup-links {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
-    }
-
-    /* Style for the slider */
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .glide__slide {
-      border: 1px solid rgb(255, 255, 255);
-      line-height: 100px;
-      margin: 0;
-      text-align: center;
-    }
-
-    #projet1 .inline-flex {
-      display: inline-flex;
+      margin-top: 1.25rem;
       flex-wrap: wrap;
-      justify-content: space-between;
-      margin-bottom: 5px;
     }
 
-    #projet1 .inline-flex + .inline-flex {
-      margin-top: 0;
+    #contact p {
+      padding: 0.3125rem 0.625rem;
     }
 
-    #projet1 .inline-flex img {
-      margin-right: 5px;
-    }
-
-    #projet1 {
-      color: rgb(29, 29, 29);
+    #sup-links a img {
+      margin: 0.625rem;
+      width: 2.5rem;
       height: auto;
+    }
+
+    .glide__slide {
+      border: 1px solid white;
+      text-align: center;
+      height: 17.5rem;
     }
 
     .project-container {
       position: relative;
-      background-size: 200%;
+      background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      height: 50%;
+      height: 100%;
       padding: 2rem;
-      background-position: 0px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .project-container::before {
@@ -168,21 +140,13 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: inherit;
-      filter: blur(5px);
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
 
-    .project-container:hover {
-      filter: blur(0);
-    }
-
-    .project-title,
-    .project-description {
+    .project-title, .project-description, .tech-stack-item, .project-container a {
       opacity: 0;
-      color: rgb(0, 0, 0);
       transition: opacity 0.3s ease;
-      z-index: 1;
     }
 
     .project-container:hover .project-title,
@@ -192,30 +156,78 @@
       opacity: 1;
     }
 
-    .project-container a {
-      opacity: 0;
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      text-align: center;
+      max-width: 90%;
     }
 
     .tech-stack-item {
-      opacity: 0;
       display: inline-flex;
       align-items: center;
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px;
-      border-radius: 10px;
-      height: 30px;
+      padding: 0.3125rem 0.625rem;
+      border-radius: 0.625rem;
+      margin: 0.125rem;
       color: white;
-      z-index: 1;
+      font-size: 0.875rem;
     }
 
     .tech-stack-item img {
       filter: brightness(0) invert(1);
+      margin-right: 0.3125rem;
+      width: 1rem;
+      height: 1rem;
     }
 
-    /* Responsive adjustments */
+    .vertical-list {
+      display: none;
+    }
+
+    .vertical-list a {
+      color: black; /* Set text color to black */
+      text-decoration: none;
+    }
+
+    .vertical-list .project-item {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid #444;
+      border-radius: 0.5rem;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+    }
+
+    .vertical-list .project-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.7); /* Light overlay for better readability of black text */
+      z-index: -1;
+    }
+
+    .vertical-list .project-item h3, .vertical-list .project-item p {
+      z-index: 1;
+    }
+
     @media (max-width: 768px) {
       .container {
-        padding: 20px;
+        padding: 1rem;
       }
 
       .skills {
@@ -224,16 +236,16 @@
       }
 
       .skill {
-        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
       }
 
-      .glide__slide {
-        height: auto;
+      .glide {
+        display: none;
       }
 
-      .project-container {
-        height: auto;
-        padding: 1rem;
+      .vertical-list {
+        display: block;
       }
     }
 
@@ -247,11 +259,6 @@
       }
 
       nav a {
-        padding: 3% 6%;
-      }
-
-      .project-container {
-        height: auto;
         padding: 0.5rem;
       }
 
@@ -271,16 +278,14 @@
     <p>Développeur Fullstack | Étudiant à l'EFREI</p>
     <div id="contact">
       <p><b>Email</b> : hugo.leyx-valade@efrei.net</p>
-      <p style="padding-left: 20px;"> <b>Tel</b> : +33 7 85 99 76 16</p>
+      <p><b>Tel</b> : +33 7 85 99 76 16</p>
     </div>
-
     <div id="sup-links">
       <a href="https://www.linkedin.com/in/hugo-leyx-valade" target="_blank">
-        <img src="./reste/LI-Logo.png" alt="GitHub" width="100" style="vertical-align: middle; margin-left: 10px;" />
+        <img src="./reste/LI-Logo.png" alt="LinkedIn" />
       </a>
-
       <a href="https://github.com/Hugo-Leyx-valade" target="_blank">
-        <img src="./reste/GitHub_Lockup_Light.png" alt="GitHub" width="100" style="vertical-align: middle; margin-left: 10px;" />
+        <img src="./reste/GitHub_Lockup_Light.png" alt="GitHub" />
       </a>
     </div>
   </header>
@@ -293,10 +298,7 @@
   <div class="container">
     <section id="profil">
       <h2>Profil</h2>
-      <p>Étudiant en première année de cycle ingénieur à l'EFREI
-        (Bac+3) en informatique,
-        A la recherche d’une alternance dans le développement
-        informatique</p>
+      <p>Étudiant en première année de cycle ingénieur à l'EFREI (Bac+3) en informatique, à la recherche d’une alternance dans le développement informatique.</p>
     </section>
     <section id="competences">
       <h2>Compétences</h2>
@@ -321,159 +323,130 @@
     <section id="experiences">
       <h2>Expériences</h2>
       <ul>
-        <ol>Stage : OPRÉRATEUR TRI ET CONDITIONNEMENT - VALPRIM</ol>
-        <li>Maîtrise des processus de tri et de contrôle qualité – Sélection des produits
-            selon des critères de qualité (taille, aspect, maturité)</li>
-        <li>Expérience en conditionnement – Emballage, étiquetage et préparation des
-            produits</li>
-        <li>Respect des normes d’hygiène – Garantir la conformité aux normes
-            agroalimentaires, respect des règles strictes d’hygiène</li>
-        <li>Travail en environnement industriel et en équipe – Adaptabilité aux
-            cadences de production, coordination avec les autres opérateurs et respect
-            des objectifs de production pour assurer un flux efficace.</li>
+        <ol>Stage : Opérateur Tri et Conditionnement - VALPRIM</ol>
+        <li>Maîtrise des processus de tri et de contrôle qualité – Sélection des produits selon des critères de qualité (taille, aspect, maturité).</li>
+        <li>Expérience en conditionnement – Emballage, étiquetage et préparation des produits.</li>
+        <li>Respect des normes d’hygiène – Garantir la conformité aux normes agroalimentaires, respect des règles strictes d’hygiène.</li>
+        <li>Travail en environnement industriel et en équipe – Adaptabilité aux cadences de production, coordination avec les autres opérateurs et respect des objectifs de production pour assurer un flux efficace.</li>
       </ul>
-      <div></div>
-      <div></div>
       <ul>
-        <ol>Stage : VENDEUR ÉLECTROMÉNAGER/MULTIMÉDIA - CONFORAMA</ol>
-        <li>Développement des compétences commerciales et relation client – Accueil,
-            conseil et accompagnement des clients</li>
-        <li>Amélioration des compétences en communication et en argumentation –
-            Présenter et vendre les différents produits</li>
-        <li>Merchandising et valorisation des produits – Mise en avant des produits
-            (présentation, étiquetage, promotions)</li>
+        <ol>Stage : Vendeur Électroménager/Multimédia - CONFORAMA</ol>
+        <li>Développement des compétences commerciales et relation client – Accueil, conseil et accompagnement des clients.</li>
+        <li>Amélioration des compétences en communication et en argumentation – Présenter et vendre les différents produits.</li>
+        <li>Merchandising et valorisation des produits – Mise en avant des produits (présentation, étiquetage, promotions).</li>
       </ul>
-      <div></div>
-      <div></div>
       <ul>
-        <ol>VICTOIRE CONCOUR TECHDAY - EFREI</ol>
-        <li>Conceptualisation d’un produit innovant – Apprentissage des différentes
-            étapes du développement d’un produit, identification d’un besoin, analyse
-            du marché et élaboration d’une solution novatrice adaptée aux attentes des
-            utilisateurs.
-            </li>
-        <li>Renforcement des compétences en gestion de projet – Planification,
-            coordination des équipes et gestion des ressources pour mener à bien un
-            projet innovant</li>
+        <ol>Victoire Concours TechDay - EFREI</ol>
+        <li>Conceptualisation d’un produit innovant – Apprentissage des différentes étapes du développement d’un produit, identification d’un besoin, analyse du marché et élaboration d’une solution novatrice adaptée aux attentes des utilisateurs.</li>
+        <li>Renforcement des compétences en gestion de projet – Planification, coordination des équipes et gestion des ressources pour mener à bien un projet innovant.</li>
       </ul>
     </section>
     <section id="projets">
-        <h2>Projets</h2>
-        <div class="wrap">
-            <div class="glide multi">
-              <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                  
-                  <li class="glide__slide" style="opacity: 1; background-color: #b97900; height: 280px; ">
-                    <a href="./GreenEscape.html">
-                    <section id="projet1" class="project-container" style="background-image: url('./reste/GreenEscape.png');">
-                        <h3 class="project-title" style="font-weight: bolder; font-size: 30px;">Projet Green Escape</h3>
-                        <p class="project-description" style=" font-size: 15px; margin-top: -65px; margin-bottom: -40px;">Création d'un jeu en ligne de résolution de labyrinthe</p>
-                        <div class="tech-stack-item" style="margin-top: -190px;">
-                          <img height="16" width="16" alt="Django" src="https://cdn.simpleicons.org/django/color">
-                          Django
-                        </div>
-                        <div class="tech-stack-item">
-                          <img height="16" width="16" alt="MongoDB" src="https://cdn.simpleicons.org/MongoDB/color">
-                          MongoDB
-                        </div>
-                        <div class="tech-stack-item">
-                          <img height="16" width="16" alt="HTML5" src="https://cdn.simpleicons.org/html5/color">
-                          HTML
-                        </div>
-                        <div class="tech-stack-item">
-                          <img height="16" width="16" alt="CSS3" src="https://cdn.simpleicons.org/css3/color">
-                          CSS
-                        </div>
-                        <div class="tech-stack-item">
-                          <img height="16" width="16" alt="JavaScript" src="https://cdn.simpleicons.org/javascript/color">
-                          <p>JS</p>
-                        </div>
-                        <a href="https://github.com/Hugo-Leyx-valade/Green-Escape" target="_blank">
-                            <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" width="30%" style="vertical-align: middle; margin-left: 10px;" />
-                          </a>
-                      </section>
+      <h2>Projets</h2>
+      <div class="wrap">
+        <div class="glide multi">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <a href="./GreenEscape.html">
+                  <section class="project-container" style="background-image: url('./reste/GreenEscape.png');">
+                    <h3 class="project-title">Projet Green Escape</h3>
+                    <p class="project-description">Création d'un jeu en ligne de résolution de labyrinthe.</p>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="Django" src="https://cdn.simpleicons.org/django/color"> Django
+                    </div>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="MongoDB" src="https://cdn.simpleicons.org/MongoDB/color"> MongoDB
+                    </div>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="HTML5" src="https://cdn.simpleicons.org/html5/color"> HTML
+                    </div>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="CSS3" src="https://cdn.simpleicons.org/css3/color"> CSS
+                    </div>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="JavaScript" src="https://cdn.simpleicons.org/javascript/color"> JS
+                    </div>
+                    <a href="https://github.com/Hugo-Leyx-valade/Green-Escape" target="_blank">
+                      <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" style="width: 30%; vertical-align: middle; margin-top: 0.625rem;" />
                     </a>
-                  </li>
-                  <li class="glide__slide" style="opacity: 1; background-color: #b97900; height: 280px; ">
-                    <a href="./BDD.html">
-                    <section id="projet1" class="project-container" style="background-image: url('./reste/projetBDDI1.png'); background-size: 100%;">
-                        <h3 class="project-title" style="font-weight: bolder; font-size: 30px;">Ludo Hub</h3>
-                        <p class="project-description" style=" font-size: 15px; margin-top: -65px; margin-bottom: -40px;">Web app de reservation de jeu au près des ludothèques</p>
-                        <div class="tech-stack-item" style="margin-top: -190px;">
-                          <img height="16" width="16" alt="Django" src="https://cdn.simpleicons.org/nodedotjs/color">
-                          Node.js
-                        </div>
-                        <div class="tech-stack-item">
-                          <img height="16" width="16" alt="MongoDB" src="https://cdn.simpleicons.org/Express/color">
-                          Express
-                        </div>
-                        <div class="tech-stack-item">
-                          <img height="16" width="16" alt="HTML5" src="https://cdn.simpleicons.org/vuedotjs/color">
-                          Vue.js
-                        </div>
-                        <a href="https://github.com/Hugo-Leyx-valade/projet-BDD-I1" target="_blank">
-                          <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" width="30%" style="vertical-align: middle; margin-left: 10px;" />
-                        </a>
-                      </section>
-                      </a>
-                  </li>
-                  <li class="glide__slide" style="opacity: 1; background-color: #ffffff; height: 280px; ">
-                    <a href="./Keydex.html">
-                    <section id="projet1" class="project-container" style="background-image: url('./reste/keydex.png'); background-size: 100%;">
-                        <h3 class="project-title" style="font-weight: bolder; font-size: 30px;">KEYDEX</h3>
-                        <p class="project-description" style=" font-size: 15px; margin-top: -65px; margin-bottom: -40px;">Idéalisation d'une solution innovante</p>
-                      </br>
-                    </br>
-                    </br>
-                      </section>
-                      </a>
-                  </li>
-                  <li class="glide__slide" style="opacity: 1; background-color: #ffffff; height: 280px; ">
-                    <a href="./tdg.html">
-                    <section id="projet1" class="project-container" style="background-image: url('./reste/tdg.jpg'); background-size: 110% 50%;">
-                        <h3 class="project-title" style="font-weight: bolder; font-size: 30px;margin-top: -10%;">Théorie des graphes</h3>
-                        <h3 class="project-title" style="font-weight: bolder; font-size: 30px;margin-top: -18%;">et</h3>
-                        <h3 class="project-title" style="font-weight: bolder; font-size: 30px;margin-top: -18%;">Recherche opérationnelle</h3>
-                        <p class="project-description" style=" font-size: 15px; margin-bottom: -40px; margin-top: -10%;">Résolution de problèmes d'ordonancement</p>
-                        <p class="project-description" style=" font-size: 15px; margin-bottom: -40px; margin-top: -18%;">et</p>
-                        <p class="project-description" style=" font-size: 15px; margin-bottom: -40px; margin-top: -18%;">Résolution de problèmes de flux</p>
-                      </br>
-                    </br>
-                    </br>
-                      </section>
-                      </a>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
+                  </section>
+                </a>
+              </li>
+              <li class="glide__slide">
+                <a href="./BDD.html">
+                  <section class="project-container" style="background-image: url('./reste/projetBDDI1.png'); background-size: cover;">
+                    <h3 class="project-title">Ludo Hub</h3>
+                    <p class="project-description">Web app de réservation de jeu auprès des ludothèques.</p>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="Node.js" src="https://cdn.simpleicons.org/nodedotjs/color"> Node.js
+                    </div>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="Express" src="https://cdn.simpleicons.org/Express/color"> Express
+                    </div>
+                    <div class="tech-stack-item">
+                      <img height="16" width="16" alt="Vue.js" src="https://cdn.simpleicons.org/vuedotjs/color"> Vue.js
+                    </div>
+                    <a href="https://github.com/Hugo-Leyx-valade/projet-BDD-I1" target="_blank">
+                      <img src="./reste/GitHub_Lockup_Dark.png" alt="GitHub" style="width: 30%; vertical-align: middle; margin-top: 0.625rem;" />
+                    </a>
+                  </section>
+                </a>
+              </li>
+              <li class="glide__slide">
+                <a href="./Keydex.html">
+                  <section class="project-container" style="background-image: url('./reste/keydex.png'); background-size: cover;">
+                    <h3 class="project-title">KEYDEX</h3>
+                    <p class="project-description">Idéalisation d'une solution innovante.</p>
+                  </section>
+                </a>
+              </li>
+              <li class="glide__slide">
+                <a href="./tdg.html">
+                  <section class="project-container" style="background-image: url('./reste/tdg.jpg'); background-size: cover;">
+                    <h3 class="project-title">Théorie des graphes et Recherche opérationnelle</h3>
+                    <p class="project-description">Résolution de problèmes d'ordonnancement et résolution de problèmes de flux.</p>
+                  </section>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        
+        <div class="vertical-list">
+          <a href="./GreenEscape.html" class="project-item" style="background-image: url('./reste/GreenEscape.png');">
+            <h3>Projet Green Escape</h3>
+            <p>Création d'un jeu en ligne de résolution de labyrinthe.</p>
+          </a>
+          <a href="./BDD.html" class="project-item" style="background-image: url('./reste/projetBDDI1.png');">
+            <h3>Ludo Hub</h3>
+            <p>Web app de réservation de jeu auprès des ludothèques.</p>
+          </a>
+          <a href="./Keydex.html" class="project-item" style="background-image: url('./reste/keydex.png');">
+            <h3>KEYDEX</h3>
+            <p>Idéalisation d'une solution innovante.</p>
+          </a>
+          <a href="./tdg.html" class="project-item" style="background-image: url('./reste/tdg.jpg');">
+            <h3>Théorie des graphes et Recherche opérationnelle</h3>
+            <p>Résolution de problèmes d'ordonnancement et résolution de problèmes de flux.</p>
+          </a>
+        </div>
+      </div>
     </section>
+  </div>
   <footer>
     &copy; 2025 Hugo Leyx-valade. Tous droits réservés.
   </footer>
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-
-    window.addEventListener('scroll', () => {
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const revealTop = el.getBoundingClientRect().top;
-        const revealPoint = 150;
-
-        if (revealTop < windowHeight - revealPoint) {
-          el.classList.add('active');
-        }
-      });
-    });
-
     var glideMulti = new Glide('.multi', {
-      type: 'slider',
+      type: 'carousel',
       autoplay: 5000,
       focusAt: 'center',
-      perView: 2
+      perView: 2,
+      breakpoints: {
+        768: {
+          perView: 1
+        }
+      }
     });
 
     glideMulti.mount();
