@@ -22,7 +22,41 @@
       scroll-behavior: smooth;
     }
 
+.profile-pic {
+  position: absolute;
+  top: 2rem;
+  right: 20rem;
+  width: 10%;
+  height: auto;
+  border-radius: 50%;
+  background: #222;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  object-fit: contain;
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  .profile-pic {
+    top: 1rem;
+    right: 1rem;
+    width: 15%;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-pic {
+    position: static;
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 90px;
+  }
+  header {
+    text-align: center;
+    padding-top: 3.5rem;
+  }
+}
     header {
+      position: relative;
       background-color: #000;
       color: white;
       padding: 2rem 1rem;
@@ -111,7 +145,7 @@
 
     #sup-links a img {
       margin: 0.625rem;
-      width: 2.5rem;
+      width: 7rem;
       height: auto;
     }
 
@@ -121,9 +155,37 @@
       height: 17.5rem;
     }
 
+     @media (max-width: 600px) {Add commentMore actions
+      nav a {
+        flex: 1 0 100%;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-left {
+      transform: translateX(-100px);
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
     .project-container {
       position: relative;
       background-size: cover;
+      overflow: hidden; /* Important pour éviter que le blur dépasse */
       background-position: center;
       height: 100%;
       padding: 2rem;
@@ -131,18 +193,27 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      z-index: 0;
     }
-
-    .project-container::before {
+        
+      .project-container::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background-size: cover;
+      background-position: center;
       z-index: -1;
+      transition: filter 0.3s ease;
+      background-image: inherit;
     }
+
+    .project-container:hover::before {
+      filter: blur(6px);
+      filter:blur(100px) brightness(2);
+}
 
     .project-title, .project-description, .tech-stack-item, .project-container a {
       opacity: 0;
@@ -274,7 +345,8 @@
 </head>
 <body>
   <header>
-    <h1>Hugo Leyx-valade</h1>
+    <img src="../public/reste/PP-removebg-preview.png" alt="Photo de profil" class="profile-pic">
+    <h1 style="font-size: 200%; font-weight: bolder">Hugo Leyx-valade</h1>
     <p>Développeur Fullstack | Étudiant à l'EFREI</p>
     <div id="contact">
       <p><b>Email</b> : hugo.leyx-valade@efrei.net</p>
@@ -297,11 +369,11 @@
   </nav>
   <div class="container">
     <section id="profil">
-      <h2>Profil</h2>
+      <h2 style="font-size: 150%;">Profil</h2>
       <p>Étudiant en première année de cycle ingénieur à l'EFREI (Bac+3) en informatique, à la recherche d’une alternance dans le développement informatique.</p>
     </section>
     <section id="competences">
-      <h2>Compétences</h2>
+      <h2 style="font-size: 150%;">Compétences</h2>
       <div class="skills">
         <div class="skill">HTML</div>
         <div class="skill">CSS</div>
@@ -321,7 +393,7 @@
       </div>
     </section>
     <section id="experiences">
-      <h2>Expériences</h2>
+      <h2 style="font-size: 150%;">Expériences</h2>
       <ul>
         <ol>Stage : Opérateur Tri et Conditionnement - VALPRIM</ol>
         <li>Maîtrise des processus de tri et de contrôle qualité – Sélection des produits selon des critères de qualité (taille, aspect, maturité).</li>
@@ -342,7 +414,7 @@
       </ul>
     </section>
     <section id="projets">
-      <h2>Projets</h2>
+      <h2 style="font-size: 150%;">Projets</h2>
       <div class="wrap">
         <div class="glide multi">
           <div class="glide__track" data-glide-el="track">
@@ -350,8 +422,8 @@
               <li class="glide__slide">
                 <a href="./GreenEscape.html">
                   <section class="project-container" style="background-image: url('./reste/GreenEscape.png');">
-                    <h3 class="project-title">Projet Green Escape</h3>
-                    <p class="project-description">Création d'un jeu en ligne de résolution de labyrinthe.</p>
+                    <h3 class="project-title" style="color: #000;">Projet Green Escape</h3>
+                    <p class="project-description" style="color: #000;">Création d'un jeu en ligne de résolution de labyrinthe.</p>
                     <div class="tech-stack-item">
                       <img height="16" width="16" alt="Django" src="https://cdn.simpleicons.org/django/color"> Django
                     </div>
@@ -376,8 +448,8 @@
               <li class="glide__slide">
                 <a href="./BDD.html">
                   <section class="project-container" style="background-image: url('./reste/projetBDDI1.png'); background-size: cover;">
-                    <h3 class="project-title">Ludo Hub</h3>
-                    <p class="project-description">Web app de réservation de jeu auprès des ludothèques.</p>
+                    <h3 class="project-title" style="color: #000;">Ludo Hub</h3>
+                    <p class="project-description" style="color: #000;">Web app de réservation de jeu auprès des ludothèques.</p>
                     <div class="tech-stack-item">
                       <img height="16" width="16" alt="Node.js" src="https://cdn.simpleicons.org/nodedotjs/color"> Node.js
                     </div>
@@ -396,16 +468,16 @@
               <li class="glide__slide">
                 <a href="./Keydex.html">
                   <section class="project-container" style="background-image: url('./reste/keydex.png'); background-size: cover;">
-                    <h3 class="project-title">KEYDEX</h3>
-                    <p class="project-description">Idéalisation d'une solution innovante.</p>
+                    <h3 class="project-title" style="color: #000;">KEYDEX</h3>
+                    <p class="project-description" style="color: #000;">Idéalisation d'une solution innovante.</p>
                   </section>
                 </a>
               </li>
               <li class="glide__slide">
                 <a href="./tdg.html">
                   <section class="project-container" style="background-image: url('./reste/tdg.jpg'); background-size: cover;">
-                    <h3 class="project-title">Théorie des graphes et Recherche opérationnelle</h3>
-                    <p class="project-description">Résolution de problèmes d'ordonnancement et résolution de problèmes de flux.</p>
+                    <h3 class="project-title" style="color: #000;">Théorie des graphes et Recherche opérationnelle</h3>
+                    <p class="project-description" style="color: #000;">Résolution de problèmes d'ordonnancement et résolution de problèmes de flux.</p>
                   </section>
                 </a>
               </li>
@@ -414,20 +486,12 @@
         </div>
         <div class="vertical-list">
           <a href="./GreenEscape.html" class="project-item" style="background-image: url('./reste/GreenEscape.png');">
-            <h3>Projet Green Escape</h3>
-            <p>Création d'un jeu en ligne de résolution de labyrinthe.</p>
           </a>
           <a href="./BDD.html" class="project-item" style="background-image: url('./reste/projetBDDI1.png');">
-            <h3>Ludo Hub</h3>
-            <p>Web app de réservation de jeu auprès des ludothèques.</p>
           </a>
           <a href="./Keydex.html" class="project-item" style="background-image: url('./reste/keydex.png');">
-            <h3>KEYDEX</h3>
-            <p>Idéalisation d'une solution innovante.</p>
           </a>
           <a href="./tdg.html" class="project-item" style="background-image: url('./reste/tdg.jpg');">
-            <h3>Théorie des graphes et Recherche opérationnelle</h3>
-            <p>Résolution de problèmes d'ordonnancement et résolution de problèmes de flux.</p>
           </a>
         </div>
       </div>
