@@ -113,11 +113,43 @@
       font-weight: bold;
       cursor: pointer;
     }
+
+        .back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: rgb(21, 116, 13);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 10000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(6, 53, 14);
+}
+
+/* Responsive: sur petits écrans réduire la taille */
+@media (max-width: 480px) {
+  .back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+    top: 10px;
+    left: 10px;
+  }
+}
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Projet Ludo Hub</h1>
+    <a href="CV.html" class="back-button">←</a>
+
 
     <div class="github-link">
       <a href="https://github.com/Hugo-Leyx-valade/Green-Escape" target="_blank">
