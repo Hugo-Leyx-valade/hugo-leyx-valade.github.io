@@ -113,11 +113,32 @@
       font-weight: bold;
       cursor: pointer;
     }
+
+                .back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: rgb(19, 243, 187);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 10000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(57, 121, 101);
+}
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Métro Efrei Dodo</h1>
+        <a href="CV.html" class="back-button">←</a>
 
     <div class="github-link">
       <a href="https://github.com/Hugo-Leyx-valade/MED-Metro-Efrei-Dodo-" target="_blank">
@@ -182,10 +203,10 @@
         </div>
         <!-- Contrôles de navigation -->
         <div data-glide-el="controls" style="text-align: center; margin-top: 10px;">
-          <button data-glide-dir="<" style="background-color: green; border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-right: 2%;" >
+          <button data-glide-dir="<" style="background-color: rgb(12, 80, 57); border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-right: 2%;" >
             <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" style="margin-top: -3%; width: 70%;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M85.333333 512l298.666667-249.6v499.2z" fill="#ffffff"></path><path d="M320 426.666667h576v170.666666H320z" fill="#ffffff"></path></g></svg>
           </button>
-            <button data-glide-dir=">" style="background-color: green; border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-left: 2%;" >
+            <button data-glide-dir=">" style="background-color: rgb(12, 80, 57); border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-left: 2%;" >
               <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000" style="margin-top: -3%; width: 70%;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M938.666667 512L640 761.6V262.4z" fill="#ffffff"></path><path d="M128 426.666667h576v170.666666H128z" fill="#ffffff"></path></g></svg>            
             </button>
             </div>
