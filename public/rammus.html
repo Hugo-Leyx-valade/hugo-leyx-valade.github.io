@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAMMUS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #f1f1f1;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 50px;
+      color: rgb(163, 141, 16);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-item {
+      background-color: #ecf0f100;
+      border-width: 1px;
+      border-color: #f1f1f169;
+      border-style: solid;
+      padding: 10px 11px;
+      border-radius: 25px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .glide__slide img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .glide__slide img:hover {
+      transform: scale(1.02);
+    }
+
+    .glide__slide p {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .github-link {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .github-link img {
+      transition: transform 0.2s ease;
+    }
+
+    .github-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: rgb(163, 141, 16);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 10000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(130, 110, 12);
+}
+
+/* Responsive: sur petits écrans réduire la taille */
+@media (max-width: 480px) {
+  .back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RAMMUS</h1>
+    <a href="CV.html" class="back-button">←</a>
+    <div class="github-link">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7338829571737174018/" target="_blank">
+          <img src="./reste/LI-Logo.png" alt="GitHub" width="130" />
+        </a>
+      </div>
+
+    <section>
+  <h2>Objectifs du projet</h2>
+  <p>
+    Pour ce projet, nous avons dû commencer par choisir un concours auquel participer.
+    Nous avons choisi le concours d'innovation Arquus qui nous a permis de travailler sur un sujet complexe et extrêmement challengeant.
+    <br> 
+    Pour ce projet, nous avons dû travailler en équipe de 5 personnes.
+    Et nous avions carte blanche sur notre sujet en lien avec les véhicules blindés d'Arquus.
+    <br>
+    Durant ce projet, nous avons suivi un processus de création d'innovation en 4 étapes.
+  </p>
+  <ul>
+    <li><b>Première idée</b> : observation d'une problématique</li>
+    <li><b>Étude de la concurrence</b> : SWOT, benchmark, PESTEL, avantage concurrentiel</li>
+    <li><b>Modélisation de l'idée</b> : maquette, état de l'art, sketchnote</li>
+    <li><b>Développement</b> : choix des technologies, développement</li>            
+  </ul>
+</section>
+
+<section>
+  <h2>Ce que le projet m’a apporté</h2>
+  <p>
+    Le concours m’a permis de concevoir une solution à la fois très technique et concrètement réalisable, tout en m’offrant l'opportunité de rencontrer et de travailler avec des personnes actives dans le monde de la défense.
+    Cette expérience m'a aussi appris à rechercher des informations pertinentes et à les analyser pour en faire des atouts précieux dans notre solution, que ce soient les avantages ou les inconvénients.
+    <br><br>
+    <b style="color: rgb(177, 150, 0);">
+      Cette expérience a aussi été l'occasion d'aller jusqu'en demi-finale du Challenge innovation Arquus, ce qui faisait de nous l'une des 10 dernières équipes dans ce concours. Nous avons d'ailleurs continué sur notre lancée en allant jusqu'en finale du concours TechDay de l'Efrei que nous avons gagné avec mon groupe.
+    </b>  
+    <br>
+    <b style="color: rgb(177, 150, 0);">
+      Notre solution a d'ailleurs été saluée par les membres du jury notamment composés d'employeurs de chez Thales ou encore SII !
+    </b>  
+  </p>
+</section>
+
+<section>
+  <h2>Notre solution</h2>
+  <p>
+    Pour notre solution, nous sommes partis d'un constat simple. Les champs de bataille sont envahis par les drones, qu'ils soient furtifs ou kamikazes, seuls ou en essaim.
+    <br>
+    Évidemment, cette nouvelle menace est un vrai danger pour les véhicules blindés légers et lourds comme ceux d'Arquus. Une explosion et c'est une perte massive de personnel et de matériel.
+    <br>
+    Alors nous avons imaginé une solution qui permettrait de détecter les drones avant qu'ils ne soient à portée d'attaque et qui les appréhenderait avant l'impact.
+    <br><br>
+    C'est ça <b style="color:rgb(163, 141, 16);">Rammus</b>, un système de détection et d'appréhension de drones qui utilise un système basé sur une <b style="color:rgb(163, 141, 16);">IA et Yolo</b> (You Only Look Once) qui permet, avec de simples caméras HD ou thermiques, de détecter une menace. Nous avons par ailleurs fait le choix de n'utiliser que des caméras afin de garder un système de <b style="color:rgb(163, 141, 16);">détection passive</b> (qui protège de la détection ennemie) et de ne pas utiliser de radar qui pourrait être détecté par l'ennemi.
+    Nous avons par ailleurs atteint un taux de détection de <b style="color:rgb(163, 141, 16);">80%</b> avec notre système entraîné sur 50 000 images, ce qui représente une solide performance pour ce genre d'algorithme.
+    <br><br>
+    Ensuite, une fois le drone détecté, nous avons imaginé un système d'appréhension qui utilise des canons de type Lacroix Galix de 80mm déjà utilisés par l'armée française et notamment par Arquus dans ses équipements Hornet (Tourelle téléopérée).
+    <br><br>
+    Notre solution ne s'arrête cependant pas à la détection et à l'appréhension. Nous avons aussi mis l'accent sur <b style="color:rgb(163, 141, 16);">la capacité de modulation de notre solution</b>.
+    <br>
+    Que ce soit dans les différents modules qui peuvent s'additionner les uns aux autres ou dans sa capacité à être intégrée dans un véhicule blindé léger ou lourd par un système d'aimants néodymes très puissants.
+    L'accent a aussi été mis sur le poids que nous cherchons à minimiser pour accélérer les processus d'installation et de désinstallation de notre solution.
+  </p>
+</section>
+
+<section>
+  <h2>Le futur</h2>
+  <p>
+    Suite à notre aventure dans le concours Arquus ou suite au TechDay de l'Efrei et des échanges avec les experts qui composaient le jury, nous avons pu constater que notre solution était très prometteuse.
+    <br>
+    Nous avons été plus qu'encouragés à continuer dans cette voie et à développer notre solution.
+    <br><br>
+    Et pour cela, nous avons plusieurs pistes d'amélioration et de développement :
+  </p>
+  <ul>
+    <li>Récupération d'images de terrain afin d'affiner l'IA à la détection en temps réel et sous les contraintes (météo, logistique, etc.) que l'on peut rencontrer sur le terrain</li>
+    <br>
+    <li>Rencontre avec des experts et collaboration avec des entreprises du marché de la défense afin de développer les pistes d'amélioration</li>
+    <br>
+    <li>Amélioration de l'algorithme de détection pour atteindre un taux de détection de 95% et une vitesse de traitement de 30 images par seconde</li>
+    <br>
+    <li>Tests sur le terrain pour valider la robustesse et l'efficacité du système dans des conditions réelles</li>
+  </ul>
+</section>
+
+
+
+    <section>
+      <h2>Galerie du projet</h2>
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="./reste/module_rammus.png" alt="Capture 1" class="glide-img" />
+              <p><b>Présentation des différents modules de Rammus : Base, Premier socle défensif, Rammus modulus</b></p>
+            </li>
+            <li class="glide__slide">
+              <img src="./reste/galix.png" alt="Capture 2" class="glide-img"/>
+              <p><b>Armement Lacroix Galix utilisable dans notre solution Rammus</b></p>
+            </li>
+            <li class="glide__slide">
+              <img src="./reste/drone_reel_detection.png" alt="Capture 3" class="glide-img"/>
+              <p><b>Exemple d'image passé à l'IA YOLO</b></p>
+            </li>
+            <li class="glide__slide">
+                <img src="./reste/detache.png" alt="Capture 3" class="glide-img"/>
+                <p><b>Vue fragmenté de la solution (Aimant Néodymes, socles et modules)</b></p>
+              </li>
+            <li class="glide__slide">
+                <img src="./reste/vainceur_techday.jpg" alt="Capture 3" class="glide-img"/>
+                <p><b></b></p>
+              </li>
+
+          </ul>
+        </div>
+        <!-- Contrôles de navigation -->
+        <div data-glide-el="controls" style="text-align: center; margin-top: 10px;">
+          <button data-glide-dir="<" style="background-color: rgb(163, 141, 16); border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-right: 2%;" >
+            <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" style="margin-top: -3%; width: 70%;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M85.333333 512l298.666667-249.6v499.2z" fill="#ffffff"></path><path d="M320 426.666667h576v170.666666H320z" fill="#ffffff"></path></g></svg>
+          </button>
+            <button data-glide-dir=">" style="background-color: rgb(163, 141, 16); border: #f1f1f1; color: #f1f1f1; width: 10%; height:50px; border-radius: 10px;font-size: larger;font-weight:900;justify-content: center; margin-left: 2%;" >
+              <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000" style="margin-top: -3%; width: 70%;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M938.666667 512L640 761.6V262.4z" fill="#ffffff"></path><path d="M128 426.666667h576v170.666666H128z" fill="#ffffff"></path></g></svg>            
+            </button>
+            </div>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 1,
+      autoplay: 3500,
+      hoverpause: true,
+      bound: true, // empêche le carrousel de sortir de la portée
+      controls: {
+        prev: '[data-glide-dir="<"]',
+        next: '[data-glide-dir=">"]'
+      }
+    }).mount();
+
+    // Lightbox logic
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".modal .close");
+
+    // Ciblage de toutes les images de la galerie
+    document.querySelectorAll(".glide__slide img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    // Fermer la lightbox
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Fermer si on clique en dehors de l'image
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
